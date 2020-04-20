@@ -30,7 +30,7 @@ struct Config {
         "   *             \n\r"
         "  *              \n\r"
         " * * * * * * * * \n\r"
-        "herizontal Line:\n\r"
+        "horizontal Line:\n\r"
         "                 \n\r"
         "                 \n\r"
         "                 \n\r"
