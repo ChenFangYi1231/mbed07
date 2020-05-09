@@ -10,6 +10,10 @@
 #include "tensorflow/lite/schema/schema_generated.h"
 #include "tensorflow/lite/version.h"
 
+#include "uLCD_4DGL.h"
+
+uLCD_4DGL uLCD(D1, D0, D2);
+
 // Return the result of the last prediction
 int PredictGesture(float* output) {
   // How many times the most recent gesture has been matched in a row
@@ -150,6 +154,7 @@ int main(int argc, char* argv[]) {
 
     // Analyze the results to obtain a prediction
     gesture_index = PredictGesture(interpreter->output(0)->data.f);
+    uLCD.printf("%d ", gesture_index);
 
     // Clear the buffer next time we read data
     should_clear_buffer = gesture_index < label_num;
